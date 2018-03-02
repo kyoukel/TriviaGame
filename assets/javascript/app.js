@@ -16,6 +16,8 @@
 
             //Don't forget to include a countdown timer.
 
+// setTimeout()
+
 // 1. 1st Page HTML***
 // ---> Game Title
 // ---> Start Button 
@@ -25,13 +27,39 @@
 
     //=========START BUTTON CLICK FUNCTION ()============
 
+    // $('#start').click(function(){
+    //     var timer = 120;
+    //     setInterval(function() {
+    //         timer--;
+    //         if (timer >= 0) {
+    //             span = document.getElementById("timer");
+    //             span.innerHTML = timer;
+    //           }
+    //           if (timer === 0) {
+    //               alert('sorry, out of time');
+    //               clearInterval(counter);
+    //           }
+    //         }, 1000);
+    // });
+
+    timer = 120;
+
+    function decrement() {
+        timer--
+        $('#insertTimer').html("<span id='timer'>" + timer + "<strong></span>");
+        if (timer <=0) {
+            console.log(timer);
+        }
+    }
+    
+
 // ---> CALL COUNTDOWN TIMER ()
 // ---> Timer is displayed on screen
 
     //==========COUNTDOWN TIMER FUNCTION ()==============
-    function myFunction() {
-        alert('Hello');
-    }
+    // function countdown() {
+    //     $()
+    // }
 
 // 3. User has 120 seconds to choose an answer for all 5 questions.
 // ---> DISPLAYS INDEX2.HTML = Questions with radio button multiple choices displayed.
