@@ -16,117 +16,116 @@
 
 </head>
 <body>
-    
-    <div class="gameTitle">
-    <h1 id="pgTitle">Totally Trivial Trivia</h1>
-    </div>
 
+<div id="wrapper">    
+        <div id="startScreen" class="gameTitle">
+            <h1 id="pgTitle">Totally Trivial Trivia</h1>
+        
     <br>
+        <button onclick = timer; type="button" id="start" class="btn btn-success btn-lg">START</button>
+    <br>
+    <br>
+        </div>
 
-    <button onclick = timer; type="button" id="start" class="btn btn-success btn-lg">START</button>
-    <br>
-    <br>
-
-    <div>
+    <div id="quiz">
         <p>Time Remaining:<span id="insertTimer"></span></p>
-    </div>
     <br>
 
         <form>
             <h5><strong>Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?</strong></h5>
             <div>
-                <input type="radio" id="chicken1"
-                name="glasses" value="a1">
-                <label for="chicken1">Prissy</label>
-            
-                <input type="radio" id="chicken2"
-                name="glasses" value="a2">
-                <label for="chicken2">Henry</label>
-            
-                <input type="radio" id="chicken3"
-                name="glasses" value="a3">
-                <label for="chicken3">Egghead Jr.</label>
+            <input type="radio" id="chicken1"
+            name="glasses" value="a1">
+            <label for="chicken1">Prissy</label>
+        
+            <input type="radio" id="chicken2"
+            name="glasses" value="a2">
+            <label for="chicken2">Henry</label>
+        
+            <input type="radio" id="chicken3"
+            name="glasses" value="a3">
+            <label for="chicken3">Egghead Jr.</label>
 
-                <input type="radio" id="chicken4"
-                name="glasses" value="a4">
-                <label for="chicken4">George P.</label>
+            <input type="radio" id="chicken4"
+            name="glasses" value="a4">
+            <label for="chicken4">George P.</label>
             </div>
         </form>
-    <pre id="log">
-    </pre>
+        <pre id="log">
+        </pre>
 
-    <form>
-        <h5><strong>Who are Donald Duck's nephews?</strong></h5>
-        <div>
-            <input type="radio" id="duck1"
-            name="newphews" value="b1">
-            <label for="duck1">Dewey, Louie, and Jack</label>
-        
-            <input type="radio" id="duck2"
-            name="nephews" value="b2">
-            <label for="duck2">Huey, Dewey, and Louie</label>
-        
-            <input type="radio" id="duck3"
-            name="nephews" value="b3">
-            <label for="duck3">Chewy, Huey, and Louie</label>
+        <form>
+            <h5><strong>Who are Donald Duck's nephews?</strong></h5>
+            <div>
+                <input type="radio" id="duck1"
+                name="newphews" value="b1">
+                <label for="duck1">Dewey, Louie, and Jack</label>
+            
+                <input type="radio" id="duck2"
+                name="nephews" value="b2">
+                <label for="duck2">Huey, Dewey, and Louie</label>
+            
+                <input type="radio" id="duck3"
+                name="nephews" value="b3">
+                <label for="duck3">Chewy, Huey, and Louie</label>
 
-            <input type="radio" id="duck4"
-            name="nephews" value="b4">
-            <label for="duck4">Dewey, Huey, and Chop-Suey</label>
-        </div>
-    </form>
-    <pre id="log">
-    </pre>
+                <input type="radio" id="duck4"
+                name="nephews" value="b4">
+                <label for="duck4">Dewey, Huey, and Chop-Suey</label>
+            </div>
+        </form>
+        <pre id="log">
+        </pre>
 
-    <form>
-        <h5><strong>Garfields' favorite food is?</strong></h5>
-        <div>
-            <input type="radio" id="garfield1"
-            name="favorites" value="c1">
-            <label for="garfield1">Ravioli</label>
-        
-            <input type="radio" id="garfield2"
-            name="favorites" value="c2">
-            <label for="garfield2">Spaghetti</label>
-        
-            <input type="radio" id="garfield3"
-            name="favorites" value="c3">
-            <label for="garfield3">Pizza</label>
+        <form>
+            <h5><strong>Garfields' favorite food is?</strong></h5>
+            <div>
+                <input type="radio" id="garfield1"
+                name="favorites" value="c1">
+                <label for="garfield1">Ravioli</label>
+            
+                <input type="radio" id="garfield2"
+                name="favorites" value="c2">
+                <label for="garfield2">Spaghetti</label>
+            
+                <input type="radio" id="garfield3"
+                name="favorites" value="c3">
+                <label for="garfield3">Pizza</label>
 
-            <input type="radio" id="garfield4"
-            name="favorites" value="c4">
-            <label for="garfield4">Lasagna</label>
-        </div>
-    </form>
-    <pre id="log">
-    </pre>
+                <input type="radio" id="garfield4"
+                name="favorites" value="c4">
+                <label for="garfield4">Lasagna</label>
+            </div>
+        </form>
+        <pre id="log">
+        </pre>
 
-    <form>
-        <h5><strong>Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?</strong></h5>
-        <div>
-            <input type="radio" id="raphael1"
-            name="turtles" value="d1">
-            <label for="raphael1">Nunchuc</label>
-        
-            <input type="radio" id="raphael2"
-            name="turtles" value="d2">
-            <label for="raphael2">Sai</label>
-        
-            <input type="radio" id="raphael3"
-            name="turtles" value="d3">
-            <label for="raphael3">Bo Staff</label>
+        <form>
+            <h5><strong>Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?</strong></h5>
+            <div>
+                <input type="radio" id="raphael1"
+                name="turtles" value="d1">
+                <label for="raphael1">Nunchuc</label>
+            
+                <input type="radio" id="raphael2"
+                name="turtles" value="d2">
+                <label for="raphael2">Sai</label>
+            
+                <input type="radio" id="raphael3"
+                name="turtles" value="d3">
+                <label for="raphael3">Bo Staff</label>
 
-            <input type="radio" id="raphael4"
-            name="turtles" value="d4">
-            <label for="raphael4">Katana</label>
-        </div>
-    </form>
-    <pre id="log">
-    </pre>  
+                <input type="radio" id="raphael4"
+                name="turtles" value="d4">
+                <label for="raphael4">Katana</label>
+            </div>
+        </form>
+        <pre id="log">
+        </pre>  
 
-    <form>
-        <h5><strong>What was the family's dog named on the Jetsons?</strong></h5>
-        <div>
+        <form>
+            <h5><strong>What was the family's dog named on the Jetsons?</strong></h5>
+            <div>
             <input type="radio" id="dog1"
             name="jetsons" value="e1">
             <label for="dog1">Comet</label>
@@ -142,11 +141,12 @@
             <input type="radio" id="dog4"
             name="jetsons" value="e4">
             <label for="dog4">Spacely</label>
-        </div>
-        <br>
-    </form>
-    <pre id="log">
-    </pre>
+            </div>
+    <br>
+        </form>
+        <pre id="log">
+        </pre>
+    </div>   
 
         <div id="tallyAnswers">
             <button id="submit" class="btn btn-success btn-lg">Submit</button>
@@ -154,6 +154,7 @@
 
     <br>
     <br>
+
 
     <div id="results">
         <p><strong>All Done!</strong></p>
@@ -164,6 +165,9 @@
         <br>
         <p><strong>Unanswered: </strong></p>
     </div>
+
+</div> <!--end of wrapper--->
+
 
     <!-- Added link to the jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
