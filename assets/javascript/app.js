@@ -59,29 +59,33 @@
             clearTimeout(timeUp);
           }, 26000)
            // console.log(time);
+           
           $('#submit').on('click', function(){
-            $('#wrapper').html(resultsHTML);
             clearInterval(timer);
             clearTimeout(timeUp);
             for(var i=0; i < $('.question').length;i++){
                 if(!$($('.question')[i]).find('input:checked').val()) {
-                  Unanswered++
-                }else if($($('.question')[i]).find('input:checked').val()===answers[i]){
+                  unanswered++
+                }else if($($('.question')[i]).find('input:checked').val()===answerArray[i]){
                   correct++
                 } else {
-                  Incorrect++
+                  incorrect++
                 }
             }
+
+            $('#wrapper').html(resultsHTML);
+            console.log(correct, incorrect, unanswered);
+            $('#unanswered').text(unanswered);
           });
         });
 
-        $( "input" ).on( "click", function() {
-            $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-        });
+        // $( "input" ).on( "click", function() {
+        //     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+        // });
 
-        var timer = setInterval(function(){}, 1000);
+        // var timer = setInterval(function(){}, 1000);
 
-// ========================THIS IS ALL MY CODE TRYING TO MAKE FUNCTIONS WORK BY COMBINING ACTIVITIES AND INTERNET SOURCES==================================THIS IS WHERE I AM AT WITH CODING FUNCTIONS...IT'S A MESS BUT SUPER DUPER PROGRESS IN HAVING ENOUGH CONFIDENCE TO TRY THEM ON MY OWN.
+// ========================THIS IS ALL MY CODE TRYING TO MAKE FUNCTIONS WORK BY COMBINING ACTIVITIES AND INTERNET SOURCES===========THIS IS WHERE I AM AT WITH CODING FUNCTIONS...IT'S A MESS BUT SUPER DUPER PROGRESS IN HAVING ENOUGH CONFIDENCE TO TRY THEM ON MY OWN.
 
 
 
