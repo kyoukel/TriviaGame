@@ -16,7 +16,33 @@
 
             //Don't forget to include a countdown timer.
 
-// setTimeout()
+    $(document).ready(function() {
+
+        $("#start").click(function(){
+            $("#results").hide();
+        });
+    
+        $("#start").click(function(){
+            $("form").show();
+        });
+    });
+
+    var questionArray = [
+        "Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?", 
+        "Who are Donald Duck's nephews?", 
+        "Garfields' favorite food is?", 
+        "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
+        "What was the family's dog named on the Jetsons?"];
+
+
+
+        for(var i = 0; i < questionArray.length; i++) {
+
+            console.log(questionArray[3]);
+    };
+
+
+// setTimeout();
 
 // 1. 1st Page HTML***
 // ---> Game Title
@@ -28,31 +54,32 @@
     //=========START BUTTON CLICK FUNCTION ()============
 
 
-    // $('start').on("click", function(){
-    //     var timer = 120;
-    //     setInterval(function() {
-    //         timer--;
-    //         if (timer >= 0) {
-    //             span = document.getElementById("timer");
-    //             span.innerHTML = timer;
-    //           }
-    //           if (timer === 0) {
-    //               alert('sorry, out of time');
-    //               clearInterval(counter);
-    //           }
-    //         }, 1000);
-    // });
-
-    $('start').on("click", function(timer) {
-        $('insertTimer').append("<p>" + timer + "</p>");
+    $('start').on("click", function(){
+        var timer = 120;
+        setInterval(function() {
+            timer--;
+            if (timer >= 0) {
+                span = document.getElementById("timer");
+                span.innerHTML = timer;
+              }
+              if (timer === 0) {
+                  alert('sorry, out of time');
+                  clearInterval(counter);
+              }
+            }, 1000);
     });
 
-    // function countdown() {
+    $('start').on("click", function() {
+        var timer = 120
+        $('#insertTimer').append("<span>" + timer + "</span>");
+    });
+
+    function countdown() {
         
-    // }
+    }
 
 
-    timer = 120;
+    var timer = 120;
 
     function decrement() {
         timer--;
@@ -62,19 +89,31 @@
     };
     
     decrement();
+
+    var insert = timer;
     
+    function timer() {
+        setTimeout(myCountdown, 10000)  
+    }
+
+    function myCountdown() {
+        $("#insertTimer").text("<p>Time Remaining: "+ insert + "</p>");
+    }
 
 // ---> CALL COUNTDOWN TIMER ()
 // ---> Timer is displayed on screen
 
     //==========COUNTDOWN TIMER FUNCTION ()==============
-    // function countdown() {
-    //     $()
-    // }
+    function countdown() {
+        $()
+    }
 
 // 3. User has 120 seconds to choose an answer for all 5 questions.
-// ---> DISPLAYS INDEX2.HTML = Questions with radio button multiple choices displayed.
+// ---> DISPLAYS QUESTIONS = Questions with radio button multiple choices displayed.
 // ---> user can only choose 1 answer per question.
+
+
+
 
 // 4. INDEX3.HTML *** When countdown timer reaches 0....
 // ---> Displays INDEX2.HTML with right, wrong, & missed answers.
