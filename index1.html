@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    
+    <link type="text/stylesheet" href="assets/css/style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <link type="text/stylesheet" href="assets/css/style.css">
 
     <title>Trivia Game1</title>
 
@@ -31,11 +31,11 @@
         <p>Time Remaining:<span id="insertTimer"></span></p>
     <br>
 
-        <div>
+        <div class="question">
             <h5><strong>Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?</strong></h5>
             <div>
-            <input type="radio" name="glasses" value="firstSet" id="firstSet">
-            <label for="firstSet">Prissy</label>
+            <input type="radio" id="chicken1" name="glasses" value="a1">
+            <label for="chicken1">Prissy</label>
         
             <input type="radio" id="chicken2"
             name="glasses" value="a2">
@@ -53,7 +53,7 @@
         <pre id="log">
         </pre>
 
-        <div>
+        <div class="question">
             <h5><strong>Who are Donald Duck's nephews?</strong></h5>
             <div>
                 <input type="radio" id="duck1"
@@ -76,7 +76,7 @@
         <pre id="log">
         </pre>
 
-        <div>
+        <div class="question">
             <h5><strong>Garfields' favorite food is?</strong></h5>
             <div>
                 <input type="radio" id="garfield1"
@@ -99,7 +99,7 @@
         <pre id="log">
         </pre>
 
-        <div>
+        <div class="question">
             <h5><strong>Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?</strong></h5>
             <div>
                 <input type="radio" id="raphael1"
@@ -122,7 +122,7 @@
         <pre id="log">
         </pre>  
 
-        <div>
+        <div class="question">
             <h5><strong>What was the family's dog named on the Jetsons?</strong></h5>
             <div>
             <input type="radio" id="dog1"

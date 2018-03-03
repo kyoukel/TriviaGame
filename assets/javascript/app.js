@@ -19,9 +19,9 @@
     var timer;
     var timeUp;
     var time = 26000;
-    var correct;
-    var incorrect;
-    var unanswered;
+    var correct = 0;
+    var incorrect = 0;
+    var unanswered = 0;
 
     var questionArray = [
         "Who is the little chicken, with glasses, that appeared with Foghorn              Leghorn?", 
@@ -63,12 +63,18 @@
             $('#wrapper').html(resultsHTML);
             clearInterval(timer);
             clearTimeout(timeUp);
+            for(var i=0; i < $('.question').length;i++){
+                if(!$($('.question')[i]).find('input:checked').val()) {
+                  Unanswered++
+                }else if($($('.question')[i]).find('input:checked').val()===answers[i]){
+                  correct++
+                } else {
+                  Incorrect++
+                }
+            }
           });
         });
 
-        
-
-        // $(document.body).append(form);
         $( "input" ).on( "click", function() {
             $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
         });
