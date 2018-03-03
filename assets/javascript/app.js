@@ -16,6 +16,7 @@
 
             //Don't forget to include a countdown timer.
 
+
     var startHTML = $('#startScreen')[0].outerHTML
         console.log(startHTML);
 
@@ -25,10 +26,27 @@
     var resultsHTML = $('#results')[0].outerHTML
         console.log(resultsHTML);
 
+        // $('#wrapper').html(startHTML);
+        // $('#wrapper').html(quizHTML);
+        // $('#wrapper').html(resultsHTML);
 
+        $('#wrapper').html(startHTML);
+        $('#start').on('click', function() {
+          $('#wrapper').html(quizHTML);
+          $('#submit').on('click',function(){
+            $('#wrapper').html(resultsHTML);
+          });
+        });
+
+        // $("#start").on("click",function() {
+        //     var startHTML = $('#startScreen')[0].outerHTML
+        //       console.log(startHTML);
+        // });
+
+// ========================THIS IS ALL MY CODE TRYING TO MAKE FUNCTIONS WORK BY COMBINING ACTIVITIES AND INTERNET SOURCES==================================
 //     $(document).ready(function() {
 
-//         $("#start").click(function(){
+//         $("#start").click(function(event){
 //             $("#results").hide();
 //         });
     
