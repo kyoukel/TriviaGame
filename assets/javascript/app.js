@@ -27,7 +27,8 @@
 
     //=========START BUTTON CLICK FUNCTION ()============
 
-    // $('#start').click(function(){
+
+    // $('start').on("click", function(){
     //     var timer = 120;
     //     setInterval(function() {
     //         timer--;
@@ -42,15 +43,25 @@
     //         }, 1000);
     // });
 
+    $('start').on("click", function(timer) {
+        $('insertTimer').append("<p>" + timer + "</p>");
+    });
+
+    // function countdown() {
+        
+    // }
+
+
     timer = 120;
 
     function decrement() {
-        timer--
-        $('#insertTimer').html("<span id='timer'>" + timer + "<strong></span>");
+        timer--;
         if (timer <=0) {
             console.log(timer);
         }
-    }
+    };
+    
+    decrement();
     
 
 // ---> CALL COUNTDOWN TIMER ()
