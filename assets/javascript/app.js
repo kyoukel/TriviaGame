@@ -17,7 +17,25 @@
             //Don't forget to include a countdown timer.
     
     var timer;
-    var time = 25000;
+    var timeUp;
+    var time = 26000;
+    var correct;
+    var incorrect;
+    var unanswered;
+
+    var questionArray = [
+        "Who is the little chicken, with glasses, that appeared with Foghorn              Leghorn?", 
+        "Who are Donald Duck's nephews?", 
+        "Garfields' favorite food is?", 
+        "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
+        "What was the family's dog named on the Jetsons?"];
+
+    var answerArray = [
+        "a3",
+        "b2",
+        "c4",
+        "d2",
+        "e3"];
 
     var startHTML = $('#startScreen')[0].outerHTML
         // console.log(startHTML);
@@ -32,17 +50,30 @@
         $('#start').on('click', function() {
           $('#wrapper').html(quizHTML);
           timer=setInterval(function(){
-          timer--
-          $('insertTimer').html(time/1000);
+          time-=1000;
+          $('#insertTimer').html(time/1000);
             // console.log(timer);
           },1000);
-            // console.log(time);
-          $('#submit').on('click',function(){
+          timeUp = setTimeout(function(){
+            clearInterval(timer);
+            clearTimeout(timeUp);
+          }, 26000)
+           // console.log(time);
+          $('#submit').on('click', function(){
             $('#wrapper').html(resultsHTML);
+            clearInterval(timer);
+            clearTimeout(timeUp);
           });
         });
 
-    var timer = setInterval(function(){}, 1000)
+        
+
+        // $(document.body).append(form);
+        $( "input" ).on( "click", function() {
+            $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+        });
+
+        var timer = setInterval(function(){}, 1000);
 
 // ========================THIS IS ALL MY CODE TRYING TO MAKE FUNCTIONS WORK BY COMBINING ACTIVITIES AND INTERNET SOURCES==================================THIS IS WHERE I AM AT WITH CODING FUNCTIONS...IT'S A MESS BUT SUPER DUPER PROGRESS IN HAVING ENOUGH CONFIDENCE TO TRY THEM ON MY OWN.
 
@@ -66,7 +97,7 @@
 //     });
 
 //     var questionArray = [
-//         "Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?", 
+//         "Who is the little chicken, with glasses, that appeared with Foghorn              Leghorn?", 
 //         "Who are Donald Duck's nephews?", 
 //         "Garfields' favorite food is?", 
 //         "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
