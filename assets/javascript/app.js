@@ -16,100 +16,110 @@
 
             //Don't forget to include a countdown timer.
 
-    $(document).ready(function() {
+    var startHTML = $('#startScreen')[0].outerHTML
+        console.log(startHTML);
 
-        $("#start").click(function(){
-            $("#results").hide();
-        });
+    var quizHTML = $('#quiz')[0].outerHTML
+        console.log(quizHTML);
+
+    var resultsHTML = $('#results')[0].outerHTML
+        console.log(resultsHTML);
+
+
+//     $(document).ready(function() {
+
+//         $("#start").click(function(){
+//             $("#results").hide();
+//         });
     
-        $("#start").click(function(){
-            $("form").show();
-        });
-    });
+//         $("#start").click(function(){
+//             $("form").show();
+//         });
+//     });
 
-    var questionArray = [
-        "Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?", 
-        "Who are Donald Duck's nephews?", 
-        "Garfields' favorite food is?", 
-        "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
-        "What was the family's dog named on the Jetsons?"];
-
-
-
-        for(var i = 0; i < questionArray.length; i++) {
-
-            console.log(questionArray[3]);
-    };
+//     var questionArray = [
+//         "Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?", 
+//         "Who are Donald Duck's nephews?", 
+//         "Garfields' favorite food is?", 
+//         "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
+//         "What was the family's dog named on the Jetsons?"];
 
 
-// setTimeout();
 
-// 1. 1st Page HTML***
-// ---> Game Title
-// ---> Start Button 
+//         for(var i = 0; i < questionArray.length; i++) {
 
-// 2. 2nd Page *** When Start button is clicked...
-// ---> Displays index2.html file
-
-    //=========START BUTTON CLICK FUNCTION ()============
+//             console.log(questionArray[3]);
+//     };
 
 
-    $('start').on("click", function(){
-        var timer = 120;
-        setInterval(function() {
-            timer--;
-            if (timer >= 0) {
-                span = document.getElementById("timer");
-                span.innerHTML = timer;
-              }
-              if (timer === 0) {
-                  alert('sorry, out of time');
-                  clearInterval(counter);
-              }
-            }, 1000);
-    });
+// // setTimeout();
 
-    $('start').on("click", function() {
-        var timer = 120
-        $('#insertTimer').append("<span>" + timer + "</span>");
-    });
+// // 1. 1st Page HTML***
+// // ---> Game Title
+// // ---> Start Button 
 
-    function countdown() {
+// // 2. 2nd Page *** When Start button is clicked...
+// // ---> Displays index2.html file
+
+//     //=========START BUTTON CLICK FUNCTION ()============
+
+
+//     $('start').on("click", function(){
+//         var timer = 120;
+//         setInterval(function() {
+//             timer--;
+//             if (timer >= 0) {
+//                 span = document.getElementById("timer");
+//                 span.innerHTML = timer;
+//               }
+//               if (timer === 0) {
+//                   alert('sorry, out of time');
+//                   clearInterval(counter);
+//               }
+//             }, 1000);
+//     });
+
+//     $('start').on("click", function() {
+//         var timer = 120
+//         $('#insertTimer').append("<span>" + timer + "</span>");
+//     });
+
+//     function countdown() {
         
-    }
+//     }
 
 
-    var timer = 120;
+//     var timer = 120;
 
-    function decrement() {
-        timer--;
-        if (timer <=0) {
-            console.log(timer);
-        }
-    };
+//     function decrement() {
+//         timer--;
+//         if (timer <=0) {
+//             console.log(timer);
+//         }
+//     };
     
-    decrement();
+//     decrement();
 
-    var insert = timer;
+//     var insert = timer;
     
-    function timer() {
-        setTimeout(myCountdown, 10000)  
-    }
+//     function timer() {
+//         setTimeout(myCountdown, 10000)  
+//     }
 
-    function myCountdown() {
-        $("#insertTimer").text("<p>Time Remaining: "+ insert + "</p>");
-    }
+//     function myCountdown() {
+//         $("#insertTimer").text("<p>Time Remaining: "+ insert + "</p>");
+//     }
 
-// ---> CALL COUNTDOWN TIMER ()
-// ---> Timer is displayed on screen
+// // ---> CALL COUNTDOWN TIMER ()
+// // ---> Timer is displayed on screen
 
-    //==========COUNTDOWN TIMER FUNCTION ()==============
-    function countdown() {
-        $()
-    }
+//     //==========COUNTDOWN TIMER FUNCTION ()==============
+//     function countdown() {
+//         $()
+//     }
 
-// 3. User has 120 seconds to choose an answer for all 5 questions.
-// ---> DISPLAYS QUESTIONS = Questions with radio button multiple choices displayed.
+// // 3. User has 120 seconds to choose an answer for all 5 questions.
+// // ---> DISPLAYS QUESTIONS = Questions with radio button multiple choices displayed.
 // ---> user can only choose 1 answer per question.
 
 
