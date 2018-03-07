@@ -3,87 +3,119 @@
 // ---> BACKGROUND PICTURE - CARTOONS & LINK IMAGES FILE
 // ---> ADD CSS & LINK CSS FILE
 
-        //You'll create a trivia form with multiple choice or true/false options (your choice).
-            //create inputs with radio buttons in html 
+//You'll create a trivia form with multiple choice or true/false options (your choice).
+//create inputs with radio buttons in html 
 
-            //The player will have a limited amount of time to finish the quiz.
-            //player chooses answers
-                //log the players choice
-                //compare the players choice to the correct answer
+//The player will have a limited amount of time to finish the quiz.
+//player chooses answers
+//log the players choice
+//compare the players choice to the correct answer
 
-            //The game ends when the time runs out.The page will reveal the number of questions that players answer correctly and incorrectly.
-            //  Don't let the player pick more than one answer per question.
+//The game ends when the time runs out.The page will reveal the number of questions that players answer correctly and incorrectly.
+//  Don't let the player pick more than one answer per question.
 
-            //Don't forget to include a countdown timer.
-    
-    var timer;
-    var timeUp;
-    var time = 26000;
-    var correct = 0;
-    var incorrect = 0;
-    var unanswered = 0;
+//Don't forget to include a countdown timer.
 
-    var questionArray = [
-        "Who is the little chicken, with glasses, that appeared with Foghorn              Leghorn?", 
-        "Who are Donald Duck's nephews?", 
-        "Garfields' favorite food is?", 
-        "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
-        "What was the family's dog named on the Jetsons?"];
+var timer;
+var timeUp;
+var time = 26000;
+var correct = 0;
+var incorrect = 0;
+var unanswered = 0;
+var answerArray = ["a3", "b2", "c4", "d2", "e3"];
+var startHTML = $('#startScreen')[0].outerHTML;
+var quizHTML = $('#quiz')[0].outerHTML;
+var resultsHTML = $('#results')[0].outerHTML;
+function getResults() {
+  clearInterval(timer);
+  clearTimeout(timeUp);
+  for (var i = 0; i < $('.question').length; i++) {
+    if (!$($('.question')[i]).find('input:checked').val()) unanswered++
+    else if ($($('.question')[i]).find('input:checked').val() === answerArray[i]) correct++
+    else incorrect++
+  }
+  $('#wrapper').html(resultsHTML);
+  $('#correct').text(correct);
+  $('#unanswered').text(unanswered);
+  $('#incorrect').text(incorrect);
+};
+$('#wrapper').html(startHTML);
+$('#start').on('click', function () {
+  $('#wrapper').html(quizHTML);
+  timer = setInterval(function () {
+    time -= 1000;
+    $('#insertTimer').html(time / 1000);
+  }, 1000);
+  timeUp = setTimeout(getResults, time)
+  $('#submit').on('click', getResults);
+});
 
-    var answerArray = [
-        "a3",
-        "b2",
-        "c4",
-        "d2",
-        "e3"];
+// var timer;
+// var timeUp;
+// var time = 26000;
+// var correct = 0;
+// var incorrect = 0;
+// var unanswered = 0;
 
-    var startHTML = $('#startScreen')[0].outerHTML
-        // console.log(startHTML);
+// var questionArray = [
+//     "Who is the little chicken, with glasses, that appeared with Foghorn Leghorn?",
+//     "Who are Donald Duck's nephews?",
+//     "Garfields' favorite food is?",
+//     "Which weapon does Raphael use in the Teenage Mutant Ninja Turtles?",
+//     "What was the family's dog named on the Jetsons?"
+// ];
 
-    var quizHTML = $('#quiz')[0].outerHTML
-        // console.log(quizHTML);
+// var answerArray = ["a3", "b2", "c4", "d2", "e3"];
 
-    var resultsHTML = $('#results')[0].outerHTML
-        // console.log(resultsHTML);
+// var startHTML = $('#startScreen')[0].outerHTML
+// // console.log(startHTML);
 
-        $('#wrapper').html(startHTML);
-        $('#start').on('click', function() {
-          $('#wrapper').html(quizHTML);
-          timer=setInterval(function(){
-          time-=1000;
-          $('#insertTimer').html(time/1000);
-            // console.log(timer);
-          },1000);
-          timeUp = setTimeout(function(){
-            clearInterval(timer);
-            clearTimeout(timeUp);
-          }, 26000)
-           // console.log(time);
-           
-          $('#submit').on('click', function(){
-            clearInterval(timer);
-            clearTimeout(timeUp);
-            for(var i=0; i < $('.question').length;i++){
-                if(!$($('.question')[i]).find('input:checked').val()) {
-                  unanswered++
-                }else if($($('.question')[i]).find('input:checked').val()===answerArray[i]){
-                  correct++
-                } else {
-                  incorrect++
-                }
-            }
+// var quizHTML = $('#quiz')[0].outerHTML
+// // console.log(quizHTML);
 
-            $('#wrapper').html(resultsHTML);
-            console.log(correct, incorrect, unanswered);
-            $('#unanswered').text(unanswered);
-          });
-        });
+// var resultsHTML = $('#results')[0].outerHTML
+// // console.log(resultsHTML);
 
-        // $( "input" ).on( "click", function() {
-        //     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-        // });
+// $('#wrapper').html(startHTML);
+// $('#start').on('click', function () {
+//     $('#wrapper').html(quizHTML);
+//     timer = setInterval(function () {
+//         time -= 1000;
+//         $('#insertTimer').html(time / 1000);
+//         // console.log(timer);
+//     }, 1000);
+//     timeUp = setTimeout(function () {
+//         clearInterval(timer);
+//         clearTimeout(timeUp);
+//     }, 26000)
+//     // console.log(time);
 
-        // var timer = setInterval(function(){}, 1000);
+//     $('#submit').on('click', function getResults () {
+//         clearInterval(timer);
+//         clearTimeout(timeUp);
+//         for (var i = 0; i < $('.question').length; i++) {
+//             if (!$($('.question')[i]).find('input:checked').val()) {
+//                 unanswered++
+//             } else if ($($('.question')[i]).find('input:checked').val() === answerArray[i])
+//                 correct++
+//                 else incorrect++
+//         };
+//         $('#wrapper').html(resultsHTML);
+//         $('#correct').text(correct);
+//         $('#missed').text(unanswered);
+//         $('#incorrect').text(incorrect);
+//     });
+
+//     $('#missed').html($('<span>' + unanswered + '</span>'));
+//     console.log(unanswered);
+// });
+
+
+// $( "input" ).on( "click", function() {
+//     $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+// });
+
+// var timer = setInterval(function(){}, 1000);
 
 // ========================THIS IS ALL MY CODE TRYING TO MAKE FUNCTIONS WORK BY COMBINING ACTIVITIES AND INTERNET SOURCES===========THIS IS WHERE I AM AT WITH CODING FUNCTIONS...IT'S A MESS BUT SUPER DUPER PROGRESS IN HAVING ENOUGH CONFIDENCE TO TRY THEM ON MY OWN.
 
@@ -93,14 +125,14 @@
 
 
 // $("#start").on("click",function() {
-        //     var startHTML = $('#startScreen')[0].outerHTML
-        //       console.log(startHTML);
-        // });
+//     var startHTML = $('#startScreen')[0].outerHTML
+//       console.log(startHTML);
+// });
 
 //         $("#start").click(function(event){
 //             $("#results").hide();
 //         });
-    
+
 //         $("#start").click(function(){
 //             $("form").show();
 //         });
@@ -154,7 +186,7 @@
 //     });
 
 //     function countdown() {
-        
+
 //     }
 
 
@@ -166,11 +198,11 @@
 //             console.log(timer);
 //         }
 //     };
-    
+
 //     decrement();
 
 //     var insert = timer;
-    
+
 //     function timer() {
 //         setTimeout(myCountdown, 10000)  
 //     }
@@ -203,7 +235,7 @@
 // ---> adds incorrect answers
 // ---> adds missed answers
 
-    //=======COUNTER FUNCTION THAT ADDS CHOICES========
+//=======COUNTER FUNCTION THAT ADDS CHOICES========
 
 // 6. Compares the players choice to the correct answer and...
 // ---> Inserts the total at the html ID targeted for each...
@@ -212,6 +244,3 @@
 // ---> missed ID
 
 // ============ IF / ELSE IF STATEMENTS THAT COMPARE & INSERT ANSWERS==================
-
-
-
